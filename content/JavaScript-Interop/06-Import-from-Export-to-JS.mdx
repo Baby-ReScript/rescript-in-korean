@@ -6,11 +6,12 @@ canonical: "/docs/manual/latest/import-from-export-to-js"
 
 # Import from/Export to JS
 
-You've seen how ReScript's idiomatic [Import & Export](import-export.md) works. This section describes how we work with importing stuff from JavaScript and exporting stuff for JavaScript consumption.
+ReScript의 관용적인 [가져오기 및 내보내기](https://green-labs.github.io/rescript-in-korean/Language-Features/22-Import-Export) 가 어떻게 작동 하는지 살펴보았습니다 . 이 섹션에서는 JavaScript에서 항목을 가져오고 JavaScript 사용을 위해 항목을 내보내는 방법을 설명합니다.
 
-**Note**: due to JS ecosystem's module compatibility issues, our advice of keeping your ReScript file's compiled JS output open in a tab applies here **more than ever**, as you don't want to subtly output the wrong JS module import/export code, on top of having to deal with Babel/Webpack/Jest/Node's CommonJS<->ES6 compatibility shims.
+**참고** : JS 생태계의 모듈 호환성 문제로, **어느 때 보다** ReScript 파일의 컴파일된 JS 출력을 탭으로 열어두기를 조언합니다. 
+Babel/Webpack/Jest/Node의 CommonJS<->ES6 호환성을 처리하는 것 외에도, 가져오기/내보내기를 통한 JS 모듈 코드의 미묘하게 잘못된 출력을 원하지 않는다면 말이죠!
 
-In short: **make sure your bindings below output what you'd have manually written in JS**.
+즉 : **직접 작성한 JS 코드의 출력 아래에 바인딩을 확인하세요**
 
 ## Output Format
 
