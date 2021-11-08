@@ -6,10 +6,9 @@ canonical: "/docs/manual/latest/import-from-export-to-js"
 
 # JS에서 가져오기/JS로 내보내기
 
-ReScript의 관용적인 [가져오기 및 내보내기](https://green-labs.github.io/rescript-in-korean/Language-Features/22-Import-Export) 가 어떻게 작동 하는지 살펴보았습니다 . 이 섹션에서는 JavaScript에서 항목을 가져오고 JavaScript 사용을 위해 항목을 내보내는 방법을 설명합니다.
+이전에 ReScript의 관용적인 [가져오기 및 내보내기](https://green-labs.github.io/rescript-in-korean/Language-Features/22-Import-Export)가 어떻게 작동 하는지 살펴보았습니다. 이 섹션에서는 JavaScript에서 항목을 가져오고 JavaScript 사용을 위해 항목을 내보내는 방법을 설명합니다.
 
-**참고** : JS 생태계의 모듈 호환성 문제로, **어느 때 보다** ReScript 파일의 컴파일된 JS 출력을 탭으로 열어두기를 조언합니다. 
-Babel/Webpack/Jest/Node의 CommonJS<->ES6 호환성을 처리하는 것 외에도, 가져오기/내보내기를 통한 JS 모듈 코드의 미묘하게 잘못된 출력을 원하지 않는다면 말이죠!
+**참고** : JS 생태계의 모듈 호환성 문제로, **어느 때 보다** ReScript 파일의 컴파일된 JS 출력을 탭으로 열어두기를 조언합니다. Babel/Webpack/Jest/Node의 CommonJS<->ES6 호환성을 처리하는 것 외에도, 가져오기/내보내기를 통한 JS 모듈 코드의 미묘하게 잘못된 출력을 원하지 않는다면 말이죠!
 
 즉 : **직접 작성한 JS 코드의 출력 아래에 바인딩을 확인하세요**
 
@@ -20,13 +19,13 @@ Babel/Webpack/Jest/Node의 CommonJS<->ES6 호환성을 처리하는 것 외에�
 - CommonJS: `require('myFile')` and `module.export = ...`.
 - ES6 modules: `import * from 'MyReScriptFile'` and `export let ...`.
 
-형식은 [bsconfig.json](build-configuration.md#package-specs)을 통해 구성할 수 있습니다.
+형식은 [bsconfig.json](https://rescript-lang.org/docs/manual/latest/build-configuration#package-specs)을 통해 구성할 수 있습니다.
 
 ## 자바스크립트에서 가져오기(Import)
 
-### 자바스크립트 모듈의 유명 내보내기(named export)를 가져오기
+### 자바스크립트 모듈의 유명 내보내기(Named Export)를 가져오기
 
-`module` [external](external.md)을 사용하세요 :
+`module` [external](https://rescript-lang.org/docs/manual/latest/external)을 사용하세요 :
 
 <CodeTab labels={["ReScript", "JS Output (CommonJS)", "JS Output (ES6)"]}>
 
@@ -98,7 +97,7 @@ var studentName = Student;
 
 ### 유명값(named value) 내보내기
 
-ReScript의 관용적 [가져오기 및 내보내기](https://green-labs.github.io/rescript-in-korean/Language-Features/22-Import-Export)에서 언급했듯이, 모든 let 바인딩 및 모듈은 기본적으로 다른 ReScript 모듈로 내보내집니다(`.resi` [인터페이스 파일](https://green-labs.github.io/rescript-in-korean/Language-Features/21-Module)을 사용하지 않는 한). 컴파일된 JS 파일을 열면, 이러한 값을 _JavaScript_ 파일에서도 직접 사용할 수 있음을 알 수 있습니다.
+ReScript의 관용적 [가져오기 및 내보내기](https://green-labs.github.io/rescript-in-korean/Language-Features/22-Import-Export)에서 언급했듯이, 모든 let 바인딩 및 모듈은 기본적으로 다른 ReScript 모듈로 내보내집니다(`.resi` [인터페이스 파일](https://green-labs.github.io/rescript-in-korean/Language-Features/21-Module#%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B3%90)을 사용하지 않는 한). 컴파일된 JS 파일을 열면, 이러한 값을 _JavaScript_ 파일에서도 직접 사용할 수 있음을 알 수 있습니다.
 
 ### ES6 기본값(default value) 내보내기
 
