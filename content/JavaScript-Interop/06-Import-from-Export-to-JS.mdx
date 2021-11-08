@@ -4,7 +4,7 @@ description: "Importing / exporting JS module content in ReScript"
 canonical: "/docs/manual/latest/import-from-export-to-js"
 ---
 
-# Import from/Export to JS
+# JS에서 가져오기/JS로 내보내기
 
 ReScript의 관용적인 [가져오기 및 내보내기](https://green-labs.github.io/rescript-in-korean/Language-Features/22-Import-Export) 가 어떻게 작동 하는지 살펴보았습니다 . 이 섹션에서는 JavaScript에서 항목을 가져오고 JavaScript 사용을 위해 항목을 내보내는 방법을 설명합니다.
 
@@ -48,11 +48,11 @@ var root = Path.dirname("/User/github");
 
 아래는 `external`이 수행하는 작업입니다.
 
-- `@module("path")`: JS 모듈의 이름, 이 경우 "path"를 전달합니다. 문자열은 무엇이든 가능합니다 : `"/src/myJsFile"`, `"@myNpmNamespace/myLib"` ...
+- `@module("path")`: JS 모듈의 이름, 이 경우 "path"를 전달합니다. 문자열은 무엇이든 가능합니다 : `"/src/myJsFile"`, `"@myNpmNamespace/myLib"` 등
 - `external`: JS 측에 존재하는 값을 선언하기 위한 일반 키워드입니다
 - `dirname`: ReScript 측에서 사용할 바인딩 이름입니다
-- `string => string`: `dirname`의 타입을 정의합니다. `externals`에 필수적인 요소입니다.
-- `= "dirname"`: `path` JS 모듈 내부의 변수 이름입니다. ReScript에서 사용하려는 바인딩 이름이 JS 모듈에서 내보낸 변수 이름과 다른 경우가 있기 때문에, 첫 번째와 두 번째 `dirname`를 작성하는 반복되는 과정이 존재합니다.
+- `string => string`: `dirname`의 타입을 정의합니다. `externals`에 필수적인 요소입니다
+- `= "dirname"`: `path` JS 모듈 내부의 변수 이름입니다. ReScript에서 사용하려는 바인딩 이름이 JS 모듈에서 내보낸 변수 이름과 다른 경우가 있기 때문에, 첫 번째와 두 번째 `dirname`를 작성하는 반복되는 과정이 존재합니다
 
 ### 자바스크립트 모듈을 단일 값으로 가져오기
 
@@ -96,11 +96,11 @@ var studentName = Student;
 
 ## 자바스크립트로 내보내기(Export)
 
-### Export a Named Value
+### 유명값(named value) 내보내기
 
 ReScript의 관용적 [가져오기 및 내보내기](https://green-labs.github.io/rescript-in-korean/Language-Features/22-Import-Export)에서 언급했듯이, 모든 let 바인딩 및 모듈은 기본적으로 다른 ReScript 모듈로 내보내집니다(`.resi` [인터페이스 파일](https://green-labs.github.io/rescript-in-korean/Language-Features/21-Module)을 사용하지 않는 한). 컴파일된 JS 파일을 열면, 이러한 값을 _JavaScript_ 파일에서도 직접 사용할 수 있음을 알 수 있습니다.
 
-### ES6 기본값(Default) 내보내기
+### ES6 기본값(default value) 내보내기
 
 JS 프로젝트에서 ES6 모듈을 사용하는 경우, 일부 기본값을 내보내고 가져올 수 있습니다.
 
