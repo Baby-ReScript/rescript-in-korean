@@ -14,7 +14,7 @@ canonical: "/docs/manual/latest/import-from-export-to-js"
 
 ## 출력 형식
 
-2가지 JavaScript 가져오기/내보내기 형식을 지원합니다 : 
+2가지 JavaScript 가져오기/내보내기 출력 형식을 지원합니다 : 
 
 - CommonJS: `require('myFile')` and `module.export = ...`.
 - ES6 modules: `import * from 'MyReScriptFile'` and `export let ...`.
@@ -74,9 +74,9 @@ var paddedResult = LeftPad("hi", 5);
 
 </CodeTab>
 
-ReScript를 CommonJS 또는 ES6 모듈로 컴파일하는지에 따라 **이 기능은 미묘하게 다른 코드를 생성합니다.** 차이점을 보려면 두 출력 탭을 모두 확인하세요. 여기의 ES6 출력은 틀리게 나올겁니다!
+ReScript를 CommonJS 또는 ES6 모듈로 컴파일하는지에 따라 **이 기능은 조금씩 다른 코드를 생성합니다.** 차이점을 보려면 두 출력 탭을 모두 확인하세요. 해당 ES6 출력은 틀리게 나올겁니다!
 
-### ES6 기본 내보내기(default export)를 가져오기
+### ES6 기본 내보내기(Default Export)를 가져오기
 
 오른쪽에 `"default"`를 사용하세요 :
 
@@ -95,11 +95,11 @@ var studentName = Student;
 
 ## 자바스크립트로 내보내기(Export)
 
-### 유명값(named value) 내보내기
+### 유명값(Named Value) 내보내기
 
 ReScript의 관용적 [가져오기 및 내보내기](https://green-labs.github.io/rescript-in-korean/Language-Features/22-Import-Export)에서 언급했듯이, 모든 let 바인딩 및 모듈은 기본적으로 다른 ReScript 모듈로 내보내집니다(`.resi` [인터페이스 파일](https://green-labs.github.io/rescript-in-korean/Language-Features/21-Module#%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B3%90)을 사용하지 않는 한). 컴파일된 JS 파일을 열면, 이러한 값을 _JavaScript_ 파일에서도 직접 사용할 수 있음을 알 수 있습니다.
 
-### ES6 기본값(default value) 내보내기
+### ES6 기본값(Default Value) 내보내기
 
 JS 프로젝트에서 ES6 모듈을 사용하는 경우, 일부 기본값을 내보내고 가져올 수 있습니다.
 
@@ -147,5 +147,5 @@ export {
 import studentName from 'ReScriptStudent.js';
 ```
 
-자바스크립트의 ES6 기본 가져오기가 Babel/Webpack/Jest에 의해 CommonJS `require`로 변환되는 경우도 처리하였으니, `__esModule`에 대한 CommonJS 출력 탭을 참조하세요.
+자바스크립트의 ES6 기본 가져오기가 Babel/Webpack/Jest에 의해 CommonJS `require`로 변환되는 경우도 처리하였습니다. 해당 내용은 `__esModule`에 대한 CommonJS 출력 탭을 참조하세요.
 
